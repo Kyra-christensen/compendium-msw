@@ -11,7 +11,7 @@ export default function List() {
   const [results, setResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const characterList = isSearching ? results : characters;
-  
+
   const handleSearch = (search) => {
     setIsSearching(!!search.length);
     const filteredCharacters = characters.filter((character) => character.character.toLowerCase().includes(search.toLowerCase().trim())
@@ -30,14 +30,18 @@ export default function List() {
 
   return ( 
     <>
+      <p>
+        <Link to='/'>Back to homepage</Link>
+      </p>
       <h3>Anime Characters</h3>
       {isLoading ? (
           <img src={Spinner}/>
         ) : (
           <>
+            
             <Search onSearch={handleSearch} />
             <ul>
-              {characterList.map((character) => { console.log(character.character);
+              {characterList.map((character) => {
                 return (
                   <li key={character.character}>
                     <Link to={`/quotes/${character.character}`}>

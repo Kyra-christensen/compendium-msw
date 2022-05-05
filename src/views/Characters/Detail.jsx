@@ -28,13 +28,13 @@ export default function Detail() {
           <img src={Spinner} />
         ) : (
           <div>
-            <h1>{character}</h1>
+            <p>Character: <strong>{character}</strong></p>
             {
               characterArr.map((character) => {
                 return (
                   <div key={character.quote}>
                     <div>
-                      <p>"{character.quote}"</p>
+                      <p>"{character.quote}" <br></br> from the anime: <strong>{character.anime}</strong>.</p>
                     </div>
                   </div>
                 )
