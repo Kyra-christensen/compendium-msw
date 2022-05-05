@@ -11,7 +11,7 @@ export default function List() {
   const [results, setResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const characterList = isSearching ? results : characters;
-
+  
   const handleSearch = (search) => {
     setIsSearching(!!search.length);
     const filteredCharacters = characters.filter((character) => character.character.toLowerCase().includes(search.toLowerCase().trim())
@@ -37,11 +37,11 @@ export default function List() {
           <>
             <Search onSearch={handleSearch} />
             <ul>
-              {characterList.map((character) => {
+              {characterList.map((character) => { console.log(character.character);
                 return (
                   <li key={character.character}>
-                    <Link to={`/quotes/character?name=${character.character}`}>
-                      <Card character={character.character} />
+                    <Link to={`/quotes/${character.character}`}>
+                      <Card character={character} />
                     </Link>
                   </li>
                 );

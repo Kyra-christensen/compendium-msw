@@ -5,7 +5,7 @@ import Detail from './views/Characters/Detail';
 export default function App() {
   return (
     <Switch>
-      <Route path='/quotes/character?name='>
+      <Route path='/quotes/:character'>
         <Detail />
       </Route>
       <Route path='/quotes'>
