@@ -5,15 +5,15 @@ import Detail from './views/Characters/Detail';
 export default function App() {
   return (
     <Switch>
-      <Route path='/people/:id'>
+      <Route path='/quotes/character?name='>
         <Detail />
       </Route>
-      <Route path='/people'>
+      <Route path='/quotes'>
         <List/>
       </Route>
       <Route path='/'>
         <p>Homepage</p>
-        <Link to='/people'>View List</Link>
+        <Link to='/quotes'>View List</Link>
       </Route>
     </Switch>
   );

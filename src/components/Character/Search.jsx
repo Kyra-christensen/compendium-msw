@@ -10,9 +10,9 @@ export default function Search({ onSearch }) {
 
   return (
     <input
-      placeholder='Search for character'
+      placeholder='Find a character'
       value={search}
-      onchange={handleChange}
+      onChange={handleChange}
     />
   );
 }

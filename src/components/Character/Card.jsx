@@ -1,5 +1,5 @@
-export default function Card({ name }) {
+export default function Card({ character }) {
   return (
-    <span>{name}</span>
+    <span>{character}</span>
   )
 }

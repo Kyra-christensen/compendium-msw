@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Character/Card';
 import Search from '../../components/Character/Search';
-import { fetchCharacters } from '../../services/studioGhibliApi';
+import { fetchCharacters } from '../../services/animeApi';
 import Spinner from '../../assets/Spinner.gif';
 
 export default function List() {
@@ -14,7 +14,7 @@ export default function List() {
 
   const handleSearch = (search) => {
     setIsSearching(!!search.length);
-    const filteredCharacters = characters.filter((character) => character.name.toLowerCase().includes(search.toLowerCase().trim())
+    const filteredCharacters = characters.filter((character) => character.character.toLowerCase().includes(search.toLowerCase().trim())
     );
     setResults(filteredCharacters);
   };
@@ -30,7 +30,7 @@ export default function List() {
 
   return ( 
     <>
-      <h3>Characters from Studio Ghibli Films</h3>
+      <h3>Anime Characters</h3>
       {isLoading ? (
           <img src={Spinner}/>
         ) : (
@@ -39,9 +39,9 @@ export default function List() {
             <ul>
               {characterList.map((character) => {
                 return (
-                  <li key={character.id}>
-                    <Link to={`/people/${character.id}`}>
-                      <Card name={character.name} />
+                  <li key={character.character}>
+                    <Link to={`/quotes/character?name=${character.character}`}>
+                      <Card character={character.character} />
                     </Link>
                   </li>
                 );
