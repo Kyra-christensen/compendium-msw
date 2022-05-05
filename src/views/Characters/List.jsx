@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from '../../components/Character/Card';
 import Search from '../../components/Character/Search';
 import { fetchCharacters } from '../../services/studioGhibliApi';
-import Spinner from '../../assets';
+import Spinner from '../../assets/Spinner.gif';
 
 export default function List() {
   const [characters, setCharacters] = useState([]);
@@ -41,7 +41,7 @@ export default function List() {
                 return (
                   <li key={character.id}>
                     <Link to={`/people/${character.id}`}>
-                      <CharacterCard name={character.name} />
+                      <Card name={character.name} />
                     </Link>
                   </li>
                 );
