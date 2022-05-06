@@ -4,7 +4,7 @@ import App from './App';
 import userEvent from '@testing-library/user-event';
 
 describe('App', () => { 
-  it('should render a list of characters', async () => {
+  it('should find a character named Sora', async () => {
     render(
     <MemoryRouter>
       <App />
