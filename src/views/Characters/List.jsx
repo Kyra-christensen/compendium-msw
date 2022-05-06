@@ -35,15 +35,15 @@ export default function List() {
       </p>
       <h3>Anime Characters</h3>
       {isLoading ? (
-          <img src={Spinner}/>
+          <img src={Spinner} alt='loading spinner'/>
         ) : (
           <>
             
             <Search onSearch={handleSearch} />
             <ul>
-              {characterList.map((character) => {
+              {characterList.map((character) => { 
                 return (
-                  <li key={character.character}>
+                  <li key={character.quote}>
                     <Link to={`/quotes/${character.character}`}>
                       <Card character={character} />
                     </Link>

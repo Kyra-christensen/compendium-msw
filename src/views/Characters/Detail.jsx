@@ -12,7 +12,6 @@ export default function Detail() {
   useEffect(() => {
     const getCharacter = async () => {
       const characterData = await fetchCharacter(character);
-      console.log(character);
       setCharacterArr(characterData);
       setIsLoading(false);
     };
@@ -25,7 +24,7 @@ export default function Detail() {
       </p>
       {
         isLoading ? (
-          <img src={Spinner} />
+          <img src={Spinner} alt='loading spinner'/>
         ) : (
           <div>
             <p>Character: <strong>{character}</strong></p>
